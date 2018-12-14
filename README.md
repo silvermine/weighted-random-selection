@@ -1,9 +1,9 @@
 # Weighted Random Selection
 
-[![Build Status](https://travis-ci.org/silvermine/weighted-random-selection.png?branch=master)](https://travis-ci.org/silvermine/weighted-random-selection)
+[![Build Status](https://travis-ci.org/silvermine/weighted-random-selection.svg?branch=master)](https://travis-ci.org/silvermine/weighted-random-selection)
 [![Coverage Status](https://coveralls.io/repos/github/silvermine/weighted-random-selection/badge.svg?branch=master)](https://coveralls.io/github/silvermine/weighted-random-selection?branch=master)
-[![Dependency Status](https://david-dm.org/silvermine/weighted-random-selection.png)](https://david-dm.org/silvermine/weighted-random-selection)
-[![Dev Dependency Status](https://david-dm.org/silvermine/weighted-random-selection/dev-status.png)](https://david-dm.org/silvermine/weighted-random-selection#info=devDependencies&view=table)
+[![Dependency Status](https://david-dm.org/silvermine/weighted-random-selection.svg)](https://david-dm.org/silvermine/weighted-random-selection)
+[![Dev Dependency Status](https://david-dm.org/silvermine/weighted-random-selection/dev-status.svg)](https://david-dm.org/silvermine/weighted-random-selection#info=devDependencies&view=table)
 
 
 ## What is it?
