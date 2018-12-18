@@ -92,9 +92,9 @@ describe('WeightedRandomSelection', function() {
 
          // Really, this part of the test is not strictly needed. If the code did not work
          // properly your CPU would simply catch on fire, indicating that the test failed.
-         // Well, since we added the 10,000 iteration error in the code, this isn't strictly
-         // true any more. But the CPU catching on fire thing was cool while it lasted.
-         // In any event we put a test here to make it look like this is better.
+         // Well, since we added the 10,000 iteration error in the code, this isn't
+         // strictly true any more. But the CPU catching on fire thing was cool while it
+         // lasted. In any event we put a test here to make it look like this is better.
          if (lastItem !== selected) {
             expect().fail(util.format('Should have returned duplicate item %d since that is the only item we have', lastItem));
          }
