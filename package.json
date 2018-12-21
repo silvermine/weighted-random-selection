@@ -1,6 +1,6 @@
 {
   "name": "@silvermine/weighted-random-selection",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Library for randomly selecting from a list of items using your own weighting for how frequently each item is chosen.",
   "main": "src/WeightedRandomSelection.js",
   "scripts": {
