@@ -4,3 +4,5 @@ Gruntfile.js
 tests/**
 coverage
 .nyc_output
+.nvmrc
+.nycrc.json
