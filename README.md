@@ -8,9 +8,9 @@
 
 ## What is it?
 
-A utility that allows you to easily choose a random item from a list of items. However, rather than having uniform
-random distribution of the choices, it will allow you to assign a "weight" to each item so that things that "weigh" more
-will be chosen more often.
+A utility that allows you to easily choose a random item from a list of items. However,
+rather than having uniform random distribution of the choices, it will allow you to
+assign a "weight" to each item so that things that "weigh" more will be chosen more often.
 
 
 ## How do I use it?
@@ -53,41 +53,46 @@ In this example, you should roughly get:
 
 ### Constructor
 
-The constructor of `WeightedRandomSelection` must be passed a function that returns a weight for each item in the list
-that is being randomly-selected from. In the example above, that is the `clickthroughWeight` function.
+The constructor of `WeightedRandomSelection` must be passed a function that returns a weight
+for each item in the list  that is being randomly-selected from. In the example above, that
+is the `clickthroughWeight` function.
 
-The constructor can be passed an optional second argument `items` which initializes the items in the list without
-needing to call `setItems` separately.
+The constructor can be passed an optional second argument `items` which initializes the items
+in the list without needing to call `setItems` separately.
 
 ### setItems
 
-The `setItems` function is passed a list of `items` that are being selected from. When `setItems` is called, internally
-the WRS will recalculate all of the weights of the items by calling your weighting function once for each item.
+The `setItems` function is passed a list of `items` that are being selected from. When
+`setItems` is called, internally the WRS will recalculate all of the weights of the
+items by calling your weighting function once for each item.
 
 Returns the instance of WRS so that you can chain calls together, e.g.
 `wrs = new WRS(foo).setItems(items).setAllowRepeatDistance(n);`
 
 ### setAllowRepeatsDisregardDistance
 
-Calling this function tells WRS that it can return the same item multiple times in a row, which is the natural behavior
-of random selection. This is enabled by default.
+Calling this function tells WRS that it can return the same item multiple times in a row,
+which is the natural behavior of random selection. This is enabled by default.
 
-However, in some applications, you want a "random" item, but you don't want that item to be one that has been selected
-in the recent *n* iterations. For that behavior, see `setAllowRepeatDistance`.
+However, in some applications, you want a "random" item, but you don't want that item to
+be one that has been selected in the recent *n* iterations. For that behavior,
+see `setAllowRepeatDistance`.
 
 Returns the instance of WRS so that you can chain calls together, e.g.
 `wrs = new WRS(foo).setItems(items).setAllowRepeatDistance(n);`
 
 ### setAllowRepeatDistance
 
-Call this function with a positive integer equal to the number of items that must appear between repeats of an item
-being selected. For example, say that you have a total of 1,000 advertisement objects you are "randomly" selecting from,
-named "ad 1" through "ad 1,000". They have varying weights based on whatever you are using to weight them. However, you
-don't want the same ad to appear multiple times in a row - if "ad 1" was returned once, you want at least *n* other ads
-to appear before "ad 1" can be returned again. In that case, call `setAllowRepeatDistance(n)`.
+Call this function with a positive integer equal to the number of items that must appear
+between repeats of an item being selected. For example, say that you have a total of
+1,000 advertisement objects you are "randomly" selecting from, named "ad 1" through
+"ad 1,000". They have varying weights based on whatever you are using to weight them.
+However, you don't want the same ad to appear multiple times in a row - if "ad 1" was
+returned once, you want at least *n* other ads to appear before "ad 1" can be returned
+again. In that case, call `setAllowRepeatDistance(n)`.
 
-NOTE: if you set the repeat distance to a number less than the number of items you have, WRS will allow repeats even
-though you didn't want them. This is a safeguard for you.
+NOTE: if you set the repeat distance to a number less than the number of items you have,
+WRS will allow repeats even though you didn't want them. This is a safeguard for you.
 
 Returns the instance of WRS so that you can chain calls together, e.g.
 `wrs = new WRS(foo).setItems(items).setAllowRepeatDistance(n);`
@@ -99,10 +104,11 @@ This is the function that actually returns to you a random item from your set of
 
 ## Various Weighting Examples
 
-Of course, in the example above you may not want a straight progression where Ad 3 that is performing four times as well
-Ad 1 gets used 4x as frequently. Maybe you want it to be 8x as frequently, or want some logarithmic scale. That's where
-you simply adjust your weighting transformer to apply whatever weight you want to the object in question. Here are some
-examples:
+Of course, in the example above you may not want a straight progression where Ad 3 that
+is performing four times as well Ad 1 gets used 4x as frequently. Maybe you want it to
+be 8x as frequently, or want some logarithmic scale. That's where you simply adjust
+your weighting transformer to apply whatever weight you want to the object in question.
+Here are some examples:
 
 ```js
 // I want better-performing ads to be ranked much higher than lesser-performing ads:
@@ -124,8 +130,9 @@ function clickthroughWeight(ad) {
 }
 ```
 
-Obviously, you can use any calculation that you want to obtain your weighting. For instance, if you wanted to rank newer
-items first (for some object that has a `createdDate` property, you could use this:
+Obviously, you can use any calculation that you want to obtain your weighting. For instance,
+if you wanted to rank newer items first (for some object that has a `createdDate` property,
+you could use this:
 
 ```js
 function objectWeight(o) {
